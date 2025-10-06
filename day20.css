@@ -1,11 +1,10 @@
 #button {
-    width: 300;
     display: block;
     margin: auto;
 }
 
 .block {
-    /* width: 340px; */
+    width: 1000px;
     display: inline-block;
     text-align: center;
     display: block;
@@ -14,7 +13,8 @@
 
 #informationBlock {
     background-color:palegoldenrod;
-    height: 200px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 #notAnswered {
@@ -23,8 +23,15 @@
 
 #answerBlock {
     background-color:cornflowerblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #member {
     color: grey;
+}
+
+#hall {
+    /* width: 1000px; */
+    border: 1px solid #333;
 }
