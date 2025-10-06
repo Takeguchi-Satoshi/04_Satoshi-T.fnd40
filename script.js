@@ -18,15 +18,15 @@ register.addEventListener("click", registrationMember);             //イベン�
 
 // 入力された参加者の名前を配列に格納＋表示する
 function registrationMember(){
-  if(input.value !== ''){
-    todayMember.push(String(input.value)+"さん ");                  //入力された名前を表示する
+  if(input.value !== ""){
+    todayMember.push(` ${String(input.value)}さん`);                  //入力された名前を表示する
     input.value = "";                                               //入力欄を初期化
   } else {
     window.alert(`参加者を入力してください`)                          //うまく処理できないので後で実装
   } 
 
   rouletteMember.innerText = todayMember;                           //表示用(ルーレットで変更しない)
-  notAnsweredMember.innerText = "未指名者："+todayMember;            //指名されたらその人を削除する
+  notAnsweredMember.innerText = `未指名者：`+todayMember;            //指名されたらその人を削除する
   currentMember = todayMember.concat();
 }
 
@@ -37,12 +37,14 @@ rouletteButton.addEventListener("click", roulette);
 
 // ランダムに回答者を指名する関数を呼び出す、全員指名されたら未指名者をリセットする
 function roulette(){
-  if(currentMember.length >= 1){
-    answerPerson.innerText = makeRandom(currentMember);
-  } else {
+  if(todayMember[0] === undefined){
+    window.alert(`参加者を入力してください`)
+    return ;
+  } 
+  if(currentMember.length < 1){
     currentMember = todayMember.concat();
-    answerPerson.innerText = makeRandom(currentMember);
   }
+  answerPerson.innerText = `🙌🙌　${makeRandom(currentMember)}　🙌🙌`;
 }
 
 // ランダムに回答者を指名する関数
@@ -50,12 +52,10 @@ function makeRandom(member) {
   const randomIndex = Math.floor(Math.random() * member.length);
   const randomMember = member[randomIndex]; 
 
-  const newMember = member.filter( function( name ) {                 //指名された名前を除去する
-    return name !== randomMember;
-  } );
+  const newMember = member.filter( (name) => name !== randomMember); //指名された名前を除去する
 
   currentMember = newMember;                                         //未指名者を除去した配列を反映して
-  notAnsweredMember.innerText = "未指名者："+currentMember;           //未指名者の表示を更新する
+  notAnsweredMember.innerText = `未指名者：`+currentMember;           //未指名者の表示を更新する
 
   return randomMember;
 }
