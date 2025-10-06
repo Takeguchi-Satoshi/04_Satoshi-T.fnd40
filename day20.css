@@ -1,0 +1,30 @@
+#button {
+    width: 300;
+    display: block;
+    margin: auto;
+}
+
+.block {
+    /* width: 340px; */
+    display: inline-block;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#informationBlock {
+    background-color:palegoldenrod;
+    height: 200px;
+}
+
+#notAnswered {
+    color: blue;
+}
+
+#answerBlock {
+    background-color:cornflowerblue;
+}
+
+#member {
+    color: grey;
+}
