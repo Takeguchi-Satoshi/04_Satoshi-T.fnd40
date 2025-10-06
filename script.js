@@ -18,7 +18,7 @@ register.addEventListener("click", registrationMember);             //イベン�
 
 // 入力された参加者の名前を配列に格納＋表示する
 function registrationMember(){
-  if(input !== ""){
+  if(input.value !== ''){
     todayMember.push(String(input.value)+"さん ");                  //入力された名前を表示する
     input.value = "";                                               //入力欄を初期化
   } else {
