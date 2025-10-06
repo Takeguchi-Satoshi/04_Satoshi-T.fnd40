@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="day20.css">
+  <title>Final Presentation</title>
+</head>
+<body>
+  <div id="hall" class="block">
+
+    <div class="block" id="inputBlock">
+      <p><h1>ランダム指名アプリ</h1></p>
+      <p><h4>参加者を1名ずつ入力してください</h4></p>
+      <p>名前<input id="inputName" type="text"></p>
+      <p><input id="registration" type="button" value="追加ボタン"></p>
+    </div><br>
+
+    <div class="block" id="informationBlock">
+      <h2>本日の参加者</h2>
+      <p><h3 id="member">”メンバー”</h3></p>
+    </div>
+  
+    <div class="block" id="answerBlock" >
+      <p><input id="rouletteButton" type="button" value="ルーレット実行ボタン"></p>
+      <p><h1 id="answerPerson">○○さん</h1></p>
+      <p><h2> 指名されました！</h2></p>
+      <p><h4 id="notAnswered">未指名者：</h4></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
